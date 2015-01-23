@@ -29,7 +29,7 @@ module EApiServer
 						if get_resource.save
 							render :show, status: :created
 						else
-							render json: get_resource.errors, status: :unprocessable_entity
+							render json: { errors: get_resource.errors }, status: :unprocessable_entity
 						end
 					end
 
@@ -59,7 +59,7 @@ module EApiServer
 					  if get_resource.update(resource_params)
 					    render :show
 					  else
-					    render json: get_resource.errors, status: :unprocessable_entity
+					    render json: { errors: get_resource.errors }, status: :unprocessable_entity
 					  end
 					end	
 
