@@ -5,6 +5,7 @@ module EApiServer
 
     config.before_configuration do
 			require 'kaminari'
+			require 'responders'
     end
 
 	end
