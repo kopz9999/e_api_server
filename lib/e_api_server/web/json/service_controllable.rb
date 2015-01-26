@@ -51,7 +51,11 @@ module EApiServer
 
 					# GET /api/{plural_resource_name}/1
 					def show
-				  	respond_with get_resource
+						unless get_resource.nil?
+				  		respond_with get_resource
+				  	else
+				  		head :no_content
+						end
 					end
 
 					# PATCH/PUT /api/{plural_resource_name}/1
@@ -109,7 +113,7 @@ module EApiServer
 
 				  # Use callbacks to share common setup or constraints between actions.
 				  def set_resource(resource = nil)
-				    resource ||= resource_class.find(params[:id])
+				    resource ||= resource_class.find_by_id(params[:id])
 				    instance_variable_set("@#{resource_name}", resource)
 				  end
 
