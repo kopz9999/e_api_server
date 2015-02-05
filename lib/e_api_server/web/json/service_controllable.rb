@@ -23,6 +23,7 @@ module EApiServer
 					public
 
 					# POST /api/{plural_resource_name}
+					# TODO: Check
 					def create
 						set_resource(resource_class.new(resource_params))
 
