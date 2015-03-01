@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @api_car.name %>
+</p>
+
+<p>
+  <strong>Enrollment:</strong>
+  <%= @api_car.enrollment %>
+</p>
+
+<%= link_to 'Edit', edit_api_car_path(@api_car) %> |
+<%= link_to 'Back', api_cars_path %>

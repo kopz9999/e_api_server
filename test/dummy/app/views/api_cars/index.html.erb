@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Api Cars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Enrollment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @api_cars.each do |api_car| %>
+      <tr>
+        <td><%= api_car.name %></td>
+        <td><%= api_car.enrollment %></td>
+        <td><%= link_to 'Show', api_car %></td>
+        <td><%= link_to 'Edit', edit_api_car_path(api_car) %></td>
+        <td><%= link_to 'Destroy', api_car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Api car', new_api_car_path %>

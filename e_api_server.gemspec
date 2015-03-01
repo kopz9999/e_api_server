@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.version     = EApiServer::VERSION
   s.authors     = ["Kyoto Kopz"]
   s.email       = ["kopz9999@gmail.com"]
-  s.homepage    = "http://bitbucket.org/kkyoto/"
-  s.summary     = "Simplifies the creation of an API Server."
+  s.homepage    = "https://github.com/kopz9999"
+  s.summary     = "Simplifies the creation of a REST API Server."
   s.description = "Provides module to simplify the creation of an API Server."
   s.license     = "MIT"
 
@@ -22,4 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'jbuilder', '~> 2.0'
 
   s.add_development_dependency "sqlite3", "1.3.10"
+  s.add_development_dependency "pry", "0.10.1"
+  s.add_development_dependency "pry-nav", "0.2.4"
 end

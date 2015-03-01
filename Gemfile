@@ -12,3 +12,6 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+#For Rails >= 4.2
+
+gem 'responders', '~> 2.0' 

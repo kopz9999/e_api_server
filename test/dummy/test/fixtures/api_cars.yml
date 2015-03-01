@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString 1
+  enrollment: MyString 1
+
+two:
+  name: MyString 2
+  enrollment: MyString 2
+
+tree:
+  name: MyString 3
+  enrollment: MyString 3
+
+four:
+  name: MyString 4
+  enrollment: MyString 4
+
+five:
+  name: MyString 5
+  enrollment: MyString 5
+
+six:
+  name: MyString 6
+  enrollment: MyString 6
+
+seven:
+  name: MyString 7
+  enrollment: MyString 7
+
+eight:
+  name: MyString 8
+  enrollment: MyString 8
