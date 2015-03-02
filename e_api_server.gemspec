@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", '~> 4.1', '>= 4.1.0'
   s.add_dependency 'kaminari', '~> 0.16', '>= 0.16.2'
   s.add_dependency 'jbuilder', '~> 2.0'
+  s.add_runtime_dependency 'responders', '2.1.0'
 
   s.add_development_dependency "sqlite3", "1.3.10"
   s.add_development_dependency "pry", "0.10.1"

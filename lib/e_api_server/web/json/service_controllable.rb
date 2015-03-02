@@ -28,10 +28,10 @@ module EApiServer
           	set_resource(resource_class.new(resource_params))
 
           	if get_resource.save
-              show_resource status: :created
-          	else
-          		render json: { errors: get_resource.errors }, status: :unprocessable_entity
-          	end
+              success_show status: :created
+            else
+              render json: { errors: get_resource.errors }, status: :unprocessable_entity
+            end
           end
 
           # DELETE /api/{plural_resource_name}/1
@@ -62,7 +62,7 @@ module EApiServer
           # PATCH/PUT /api/{plural_resource_name}/1
           def update
             if get_resource.update(resource_params)
-              show_resource status: :ok
+              success_show status: :ok
             else
               render json: { errors: get_resource.errors }, status: :unprocessable_entity
             end
@@ -127,14 +127,10 @@ module EApiServer
           #Methods to be overriden 
           protected
 
-          # Optional override if you prefer to use a template, render a json or whatever you want
-          # @return [Action], [Template]
-          def show_resource( opts = {} )
-            if template_exists? (:show)
-              render :show
-            else
-              render opts.merge( json: get_resource )
-            end
+          # Override with your own implementation if you want to change it for a JBuilder template
+          # @return [Action]
+          def success_show(opts = {})
+            render opts.merge( json: get_resource )
           end
 
           # Override with the parameters you want

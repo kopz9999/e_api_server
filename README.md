@@ -110,12 +110,17 @@ By default, the module will try to infer the following properties
   </li>
 </ul>
 
-If you are processing to many queries in the index, it is recommended that you change it to POST index in the routes.
+If you are processing too many queries in the index, it is recommended that you change it to POST index in the routes.
 <br/>
-You may want to override one of the following optional methods
-<ul>
-  <li> show_resource = checks if you have a json template. If you don't have one, it does a simple render json. You may want to skip this validation if you always want a default display method. This called after a successful create or update </li>
-</ul>
+Other methods you may want to override are:
+
+```ruby
+# Override with your own implementation if you want to change it for a JBuilder template
+# @return [Action]
+def success_show
+  render json: get_resource_params
+end
+```
 
 If you still have doubts about how to query the index, please check the controller test in /test/dummy/test/controllers/api_cars_controller_test.rb
 
