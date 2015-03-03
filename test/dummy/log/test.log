@@ -2853,3 +2853,101 @@ Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.3ms)
 EApiServerTest: test_truth
 --------------------------
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "api_cars"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at", "id") VALUES ('MyString 1', 'MyString 1', '2015-03-03 04:59:50', '2015-03-03 04:59:50', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at", "id") VALUES ('MyString 2', 'MyString 2', '2015-03-03 04:59:50', '2015-03-03 04:59:50', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at", "id") VALUES ('MyString 3', 'MyString 3', '2015-03-03 04:59:50', '2015-03-03 04:59:50', 926834398)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at", "id") VALUES ('MyString 4', 'MyString 4', '2015-03-03 04:59:50', '2015-03-03 04:59:50', 281110143)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at", "id") VALUES ('MyString 5', 'MyString 5', '2015-03-03 04:59:50', '2015-03-03 04:59:50', 1018350795)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at", "id") VALUES ('MyString 6', 'MyString 6', '2015-03-03 04:59:50', '2015-03-03 04:59:50', 51848956)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at", "id") VALUES ('MyString 7', 'MyString 7', '2015-03-03 04:59:50', '2015-03-03 04:59:50', 374648174)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at", "id") VALUES ('MyString 8', 'MyString 8', '2015-03-03 04:59:50', '2015-03-03 04:59:50', 638205575)[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------
+EApiServerTest: test_truth
+--------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+ApiCarsControllerTest: test_should_update_api_car
+-------------------------------------------------
+  [1m[35mApiCar Load (0.4ms)[0m  SELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ApiCarsController#update as JSON
+  Parameters: {"api_car"=>{"enrollment"=>"MyString 1", "name"=>"MyString 1"}, "id"=>"980190962"}
+  [1m[36mApiCar Load (0.2ms)[0m  [1mSELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+ApiCarsControllerTest: test_should_page_records
+-----------------------------------------------
+  [1m[35mApiCar Load (0.1ms)[0m  SELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ApiCarsController#index as JSON
+  Parameters: {"pagination"=>{"page"=>2, "page_size"=>3}, "ordering"=>{"name"=>:asc}}
+  [1m[36mApiCar Load (0.4ms)[0m  [1mSELECT  "api_cars".* FROM "api_cars"  ORDER BY "api_cars"."name" ASC LIMIT 3 OFFSET 3[0m
+Completed 200 OK in 54ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+ApiCarsControllerTest: test_should_destroy_api_car
+--------------------------------------------------
+  [1m[35mApiCar Load (0.1ms)[0m  SELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "api_cars"[0m
+Processing by ApiCarsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mApiCar Load (0.1ms)[0m  SELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "api_cars" WHERE "api_cars"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "api_cars"
+  [1m[36m (20.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+ApiCarsControllerTest: test_should_show_api_car
+-----------------------------------------------
+  [1m[36mApiCar Load (0.1ms)[0m  [1mSELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ApiCarsController#show as JSON
+  Parameters: {"id"=>"980190962"}
+  [1m[35mApiCar Load (0.1ms)[0m  SELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------
+ApiCarsControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mApiCar Load (0.2ms)[0m  [1mSELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ApiCarsController#index as JSON
+  [1m[35mApiCar Load (0.2ms)[0m  SELECT  "api_cars".* FROM "api_cars" LIMIT 25 OFFSET 0
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------
+ApiCarsControllerTest: test_should_create_api_car
+-------------------------------------------------
+  [1m[36mApiCar Load (0.2ms)[0m  [1mSELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "api_cars"
+Processing by ApiCarsController#create as JSON
+  Parameters: {"api_car"=>{"enrollment"=>"MyString 1", "name"=>"MyString 1"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "api_cars" ("name", "enrollment", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString 1"], ["enrollment", "MyString 1"], ["created_at", "2015-03-03 04:59:50.935802"], ["updated_at", "2015-03-03 04:59:50.935802"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "api_cars"
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------
+ApiCarsControllerTest: test_should_order_records
+------------------------------------------------
+  [1m[36mApiCar Load (0.1ms)[0m  [1mSELECT  "api_cars".* FROM "api_cars" WHERE "api_cars"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ApiCarsController#index as JSON
+  Parameters: {"ordering"=>{"id"=>"desc"}}
+  [1m[35mApiCar Load (0.2ms)[0m  SELECT  "api_cars".* FROM "api_cars"  ORDER BY "api_cars"."id" DESC LIMIT 25 OFFSET 0
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+  [1m[36mApiCar Load (0.2ms)[0m  [1mSELECT  "api_cars".* FROM "api_cars"  ORDER BY "api_cars"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction

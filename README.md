@@ -1,5 +1,5 @@
 #API Server Gem
-This is a gem used for converting a any controller in a JSON REST API
+This is a gem used for converting a any controller in a JSON REST API. If you have a Rails application as a client, it is recommended to use https://github.com/kopz9999/e_api_client to consume resources
 <br/>
 You just need to include the module <b>EApiServer::Web::JSON::ServiceControllable</b> in your controller.
 
@@ -134,3 +134,22 @@ gem 'responders', '~> 2.0'
 When you test your API, make sure you request it with the correct format. Assumming you are running your API on port 3000, for ApiCarsController#index, you must request: http://localhost:3000/api_cars.json
 <br/>
 Remember, the suffix <b>.json</b> is the format of the request
+<br/>
+<b>Copyright 2015 kopz9999@github.com</b>
+<br/>
+== License
+
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with this
+work for additional information regarding copyright ownership.  The ASF
+licenses this file to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+License for the specific language governing permissions and limitations under
+the License.

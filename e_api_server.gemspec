@@ -1,3 +1,5 @@
+#Copyright 2015 kopz9999@github.com
+
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
@@ -12,9 +14,9 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/kopz9999"
   s.summary     = "Simplifies the creation of a REST API Server."
   s.description = "Provides module to simplify the creation of an API Server."
-  s.license     = "MIT"
+  s.license     = "Apache-2.0"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", '~> 4.1', '>= 4.1.0'
