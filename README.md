@@ -135,9 +135,12 @@ When you test your API, make sure you request it with the correct format. Assumm
 <br/>
 Remember, the suffix <b>.json</b> is the format of the request
 <br/>
-<b>Copyright 2015 kopz9999@github.com</b>
 <br/>
-== License
+<b>Copyright 2015 kopz9999@gmail.com</b>
+<br/>
+<br/>
+
+#License
 
 Licensed to the Apache Software Foundation (ASF) under one or more
 contributor license agreements.  See the NOTICE file distributed with this
