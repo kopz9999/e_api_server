@@ -1,4 +1,4 @@
-#Copyright 2015 kopz9999@github.com
+#Copyright 2015 Kyoto Kopz kopz9999@gmail.com
 
 $:.push File.expand_path("../lib", __FILE__)
 
