@@ -136,9 +136,7 @@ When you test your API, make sure you request it with the correct format. Assumm
 Remember, the suffix <b>.json</b> is the format of the request
 <br/>
 <br/>
-<b>Copyright 2015 kopz9999@gmail.com</b>
-<br/>
-<br/>
+#Copyright 2015 kopz9999@gmail.com
 
 #License
 
