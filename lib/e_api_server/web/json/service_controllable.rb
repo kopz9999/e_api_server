@@ -43,7 +43,7 @@ module EApiServer
           # GET /api/{plural_resource_name}
           def index
           	plural_resource_name = "@#{resource_name.pluralize}"
-          	resources = resource_class.where(query_params).page(page_params[:page]).per(page_params[:page_size]).order( order_params )
+          	resources = resource_class.where(query_params).pagination_by_params(page_params).order( order_params )
 
           	instance_variable_set(plural_resource_name, resources)
 
