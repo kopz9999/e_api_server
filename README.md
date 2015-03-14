@@ -135,6 +135,9 @@ When you test your API, make sure you request it with the correct format. Assumm
 <br/>
 Remember, the suffix <b>.json</b> is the format of the request
 <br/>
+## TODO
+* Support for Batch requests
+
 <br/>
 #Copyright 2015 Kyoto Kopz kopz9999@gmail.com
 
