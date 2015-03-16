@@ -1,10 +1,12 @@
-class ActiveRecord::Base     
+module ActiveRecordExtension
 
-  class << self
+  extend ActiveSupport::Concern
+
+  module ClassMethods
 
     def pagination_by_params( page_params = {} )
       if page_params.blank?
-        self
+        where(nil)
       else
         page(page_params[:page]).per(page_params[:page_size])
       end
@@ -13,3 +15,5 @@ class ActiveRecord::Base
   end
 
 end
+
+ActiveRecord::Base.send(:include, ActiveRecordExtension)

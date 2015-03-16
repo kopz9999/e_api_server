@@ -1,14 +1,11 @@
 module EApiServer
-
   module Web
-
     module JSON
-
       module ServiceControllable
 
         extend ActiveSupport::Concern
 
-          included do
+        included do
 
           #Avoid protect from forgery
           protect_from_forgery with: :null_session
@@ -25,9 +22,9 @@ module EApiServer
           # POST /api/{plural_resource_name}
           # TODO: Check
           def create
-          	set_resource(resource_class.new(resource_params))
+            set_resource(resource_class.new(resource_params))
 
-          	if get_resource.save
+            if get_resource.save
               success_show status: :created
             else
               render json: { errors: get_resource.errors }, status: :unprocessable_entity
@@ -36,18 +33,19 @@ module EApiServer
 
           # DELETE /api/{plural_resource_name}/1
           def destroy
-          	get_resource.destroy
-          	head :no_content
+            get_resource.destroy
+            head :no_content
           end
 
           # GET /api/{plural_resource_name}
           def index
-          	plural_resource_name = "@#{resource_name.pluralize}"
-          	resources = resource_class.where(query_params).pagination_by_params(page_params).order( order_params )
+            plural_resource_name = "@#{resource_name.pluralize}"
+            resources = resource_class.where(query_params).pagination_by_params(page_params).order( order_params )
+            #resources = resource_class.where(query_params).order( order_params )
 
-          	instance_variable_set(plural_resource_name, resources)
+            instance_variable_set(plural_resource_name, resources)
 
-          	respond_with instance_variable_get(plural_resource_name)
+            respond_with instance_variable_get(plural_resource_name)
           end
 
           # GET /api/{plural_resource_name}/1
@@ -66,7 +64,7 @@ module EApiServer
             else
               render json: { errors: get_resource.errors }, status: :unprocessable_entity
             end
-          end	
+          end
 
           #Private methods to be used by Controller
           private
@@ -169,12 +167,9 @@ module EApiServer
             required_params.permit( :page, :page_size )
           end
 
-        end	
+        end
 
       end
-
     end
-
   end
-
 end
